@@ -62,7 +62,7 @@ def run_notebook(config):
 # COMMAND ----------
 
 # Configura o número de threads (ajuste conforme necessário)
-max_workers = 20
+max_workers = 10
 
 # Executor para gerenciar os threads
 with ThreadPoolExecutor(max_workers=max_workers) as executor:
