@@ -28,7 +28,7 @@ from pyspark.sql.types import (
 
 # Informações da Tabela Fonte
 source_table = "person_stateprovince"
-source_database = "adventure_works_bronze"
+source_database = "hive_metastore.adventure_works_bronze"
 bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 
 # Informações da Tabela Destino (target)
