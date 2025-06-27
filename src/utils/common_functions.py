@@ -1,3 +1,4 @@
+# COMMAND ----------
 # Definindo o catálogo padrão
 catalog = "hive_metastore"
 
