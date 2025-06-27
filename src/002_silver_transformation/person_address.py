@@ -67,7 +67,7 @@ expected_schema = StructType([
 
 def transform_Address(Address: DataFrame) -> DataFrame:
     '''
-    Transformação da tabela: Address
+    Transformação da tabela: person_address
 
     Parâmetros:
         Address (DataFrame): DataFrame contendo os dados da tabela Address
