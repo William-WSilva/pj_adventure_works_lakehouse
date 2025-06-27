@@ -1,10 +1,31 @@
 # Databricks notebook source
-# MAGIC %run "./configs"
 
-# COMMAND ----------
+# criar um dicionario com todos os schemas(pastas) e tabelas para processamento 
+def generate_ingestion_dict(path, database_name, input_format):
+    ingestion_tables = {}
+    folders = dbutils.fs.ls(path)
 
-if not configs:
-    print("error")
+    for folder in folders:
+        # Verifica se é uma pasta
+        if folder.isDir():
+            subfolder_path = folder.path
+            files = dbutils.fs.ls(subfolder_path)
+
+            for file in files:
+                # Verifica se é um arquivo parquet
+                if file.name.endswith('.parquet'):
+                    table_name = file.name.replace('.parquet', '')
+                    file_path = f"{subfolder_path.replace('dbfs:', '')}/{file.name}"
+
+                    ingestion_tables[table_name] = {
+                        'database_name': database_name,
+                        'file_path': file_path,
+                        'table_name': table_name,
+                        'input_format': input_format
+                    }
+
+    return ingestion_tables
+
 
 # COMMAND ----------
 
@@ -27,25 +48,36 @@ def ingest_bronze_and_save(file_path, table_name, database_name):
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Função que processa um item de configuração
-def process_config(item):
-    file_path = configs[item]['file_path']
-    database_name = configs[item]['database_name']
-    table_name = configs[item]['table_name']
-    ingest_bronze_and_save(file_path=file_path, table_name=table_name, database_name=database_name)
+def process_table(table_info: dict) -> str:
+    """
+    Processa uma tabela com base nas informações do dicionário.
+    """
+    try:
+        ingest_bronze_and_save(
+            file_path=table_info['file_path'],
+            table_name=table_info['table_name'],
+            database_name=table_info['database_name']
+        )
+        return f"✅ Ingestão OK: {table_info['table_name']}"
+    except Exception as e:
+        return f"❌ Erro ao ingerir {table_info['table_name']}: {e}"
 
-# Configura o número de threads (ajuste conforme necessário)
-max_workers = 10
+# Número de threads
+max_threads = 10
 
-# Executor para gerenciar os threads
-with ThreadPoolExecutor(max_workers=max_workers) as executor:
-    futures = {executor.submit(process_config, item): item for item in configs}
+# Lista para armazenar futures
+futures = []
+results = []
 
-    # Coleta os resultados conforme cada tarefa é concluída
+print(f"🚀 Iniciando ingestão com {max_threads} threads...\n")
+
+# Executor em paralelo com append
+with ThreadPoolExecutor(max_workers=max_threads) as executor:
+    for table_info in generate_ingestion_dict.values():
+        print(f"🕓 Agendando: {table_info['table_name']}")
+        futures.append(executor.submit(process_table, table_info))
+
     for future in as_completed(futures):
-        item = futures[future]
-        try:
-            future.result()
-            print(f"{item} processado com sucesso.")
-        except Exception as e:
-            print(f"Erro ao processar {item}: {e}")
+        result = future.result()
+        print(result)
+        results.append(result)
