@@ -217,29 +217,3 @@ _upsert_silver_table(transformed_df, target_table, primary_keys, not_matched_by_
 
 # MAGIC %sql 
 # MAGIC select count(*) from adventure_works_prata.Sales_SalesOrderHeader
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-#declarar Schema
-
-# COMMAND ----------
-
-#declarar função de transformação
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
