@@ -10,7 +10,6 @@ spark.sql("SET spark.databricks.delta.schema.autoMerge.enabled = true")
 # COMMAND ----------
 
 # MAGIC %run "/Workspace/Users/roseaneinacio@nw5y.onmicrosoft.com/ws_pj_adventure_works_lakehouse/src/utils/common_functions"
-# MAGIC %run "/Workspace/Users/roseaneinacio@nw5y.onmicrosoft.com/ws_pj_adventure_works_lakehouse/src/utils/common_functions"
 
 # COMMAND ----------
 
