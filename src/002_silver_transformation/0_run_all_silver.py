@@ -87,12 +87,6 @@ dict_tables = {
     }
 }
 
-
-
-# COMMAND ----------
-
-
-
 # COMMAND ----------
 
 def run_notebook(config):
@@ -123,12 +117,3 @@ with ThreadPoolExecutor(max_workers=max_workers) as executor:
             print(f"Notebook para {table} processado com sucesso.")
         except Exception as e:
             print(f"Erro ao processar {table}: {e}")
-
-# COMMAND ----------
-
-# # Executando cada notebook se estiver ativo
-# for table, config in dict_tables.items():
-#     if config['active'] == 1:
-#         print(f"Executing notebook for {table} at {config['notebook_path']}")
-#         result = dbutils.notebook.run(config['notebook_path'], 0)  # timeout = 0 indica espera indefinida
-#         print(f"Result for {table}: {result}")
