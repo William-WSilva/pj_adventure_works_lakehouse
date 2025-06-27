@@ -60,7 +60,7 @@ def process_table(table_info: dict) -> str:
         )
         return f"✅ Ingestão OK: {table_info['table_name']}"
     except Exception as e:
-        return f"❌ Erro ao ingerir {table_info['table_name']}: {e}"
+        return f"❌ Ingestão falhou: {table_info['table_name']}: {e}"
 
 # Número de threads
 max_threads = 10
