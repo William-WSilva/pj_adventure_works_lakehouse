@@ -33,7 +33,7 @@ bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 
 # Informações da Tabela Destino (target)
 target_table_name = "sales_currency"
-target_database = "adventure_works_prata"
+target_database = "hive_metastore.adventure_works_prata"
 target_table = f"{target_database}.{target_table_name}"
 
 primary_keys = ["CurrencyCode"]

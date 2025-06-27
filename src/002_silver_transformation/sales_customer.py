@@ -32,7 +32,7 @@
 # MAGIC 
 # MAGIC # Informações da Tabela Destino (target)
 # MAGIC target_table_name = "sales_customer"
-# MAGIC target_database = "adventure_works_prata"
+# MAGIC target_database = "hive_metastore.adventure_works_prata"
 # MAGIC target_table = f"{target_database}.{target_table_name}"
 # MAGIC 
 # MAGIC primary_keys = ["CustomerID"]

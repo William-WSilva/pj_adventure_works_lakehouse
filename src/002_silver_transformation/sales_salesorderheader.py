@@ -33,8 +33,8 @@ source_database = "hive_metastore.adventure_works_bronze"
 bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 
 # Informações da Tabela Destino (target)
-target_table_name = "Sales_SalesOrderHeader"
-target_database = "adventure_works_prata"
+target_table_name = "sales_salesorderheader"
+target_database = "hive_metastore.adventure_works_prata"
 target_table = f"{target_database}.{target_table_name}"
 
 primary_keys = ["SalesOrderID"]
