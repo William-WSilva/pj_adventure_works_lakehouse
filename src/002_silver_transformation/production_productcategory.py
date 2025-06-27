@@ -28,12 +28,12 @@ from pyspark.sql.types import (
 
 # Informações da Tabela Fonte
 source_table = "production_productcategory"
-source_database = "hive_metastore.adventure_works_bronze"
+source_database = bronze_db
 bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 
 # Informações da Tabela Destino (target)
 target_table_name = "production_productcategory"
-target_database = "hive_metastore.adventure_works_prata"
+target_database = silver_db
 target_table = f"{target_database}.{target_table_name}"
 
 primary_keys = ["ProductCategoryID"]
