@@ -151,9 +151,9 @@ _upsert_silver_table(transformed_df, target_table, primary_keys, not_matched_by_
 # COMMAND ----------
 
 # MAGIC %sql 
-# MAGIC select * from adventure_works_prata.production_productmodel limit 10
+# MAGIC select * from hive_metastore.adventure_works_prata.production_productmodel limit 10
 
 # COMMAND ----------
 
 # MAGIC %sql 
-# MAGIC select count(*) from adventure_works_prata.production_productmodel
+# MAGIC select count(*) from hive_metastore.adventure_works_prata.production_productmodel

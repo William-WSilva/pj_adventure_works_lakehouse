@@ -158,9 +158,9 @@
 # MAGIC # COMMAND ----------
 # MAGIC 
 # MAGIC %sql 
-# MAGIC select * from adventure_works_prata.sales_customer limit 10
+# MAGIC select * from hive_metastore.adventure_works_prata.sales_customer limit 10
 # MAGIC 
 # MAGIC # COMMAND ----------
 # MAGIC 
 # MAGIC %sql 
-# MAGIC select count(*) from adventure_works_prata.sales_customer
+# MAGIC select count(*) from hive_metastore.adventure_works_prata.sales_customer
