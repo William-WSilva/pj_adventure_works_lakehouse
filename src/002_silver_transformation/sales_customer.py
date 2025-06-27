@@ -26,12 +26,13 @@
 # MAGIC # COMMAND ----------
 # MAGIC 
 # MAGIC # Informações da Tabela Fonte
-# MAGIC source_table = "sales_customer"
+table_name = "sales_customer"
+# MAGIC source_table = table_name
 # MAGIC source_database = "adventure_works_bronze"
 # MAGIC bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 # MAGIC 
 # MAGIC # Informações da Tabela Destino (target)
-# MAGIC target_table_name = "sales_customer"
+# MAGIC target_table_name = table_name
 # MAGIC target_database = silver_db
 # MAGIC target_table = f"{target_database}.{target_table_name}"
 # MAGIC 

@@ -28,12 +28,13 @@ from pyspark.sql.types import (
 # COMMAND ----------
 
 # Informações da Tabela Fonte
-source_table = "sales_salesorderdetail"
+table_name = "sales_salesorderdetail"
+source_table = table_name
 source_database = bronze_db
 bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 
 # Informações da Tabela Destino (target)
-target_table_name = "Sales_SalesOrderDetail"
+target_table_name = table_name
 target_database = silver_db
 target_table = f"{target_database}.{target_table_name}"
 
