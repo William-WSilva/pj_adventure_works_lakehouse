@@ -4,7 +4,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run "/Workspace/AdventureWorks_Lakehouse/AdventureWorks/utils/test_functions"
+# MAGIC %run "/Workspace/Users/roseaneinacio@nw5y.onmicrosoft.com/ws_pj_adventure_works_lakehouse/src/utils/test_functions"
 
 # COMMAND ----------
 
