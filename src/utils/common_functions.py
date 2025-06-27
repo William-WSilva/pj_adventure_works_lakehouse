@@ -1,4 +1,8 @@
+# Databricks notebook source
+print("carregando variaveis e funções")
+
 # COMMAND ----------
+
 # Definindo o catálogo padrão
 catalog = "hive_metastore"
 
@@ -7,10 +11,6 @@ bronze_db = f"{catalog}.adventure_works_bronze"
 silver_db = f"{catalog}.adventure_works_prata"
 gold_db = f"{catalog}.adventure_works_ouro"
 
-# COMMAND ----------
-
-# Databricks notebook source
-print("carregando funções")
 
 # COMMAND ----------
 
