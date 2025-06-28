@@ -2,6 +2,17 @@
 
 # MAGIC %run "/Workspace/Users/roseaneinacio@nw5y.onmicrosoft.com/ws_pj_adventure_works_lakehouse/src/001_bronze_ingestion/configs"
 
+# COMMAND ----------
+
+folders_path = '/mnt/wsadlsadwprd/adw/001_bronze'
+database_name = 'hive_metastore.adventure_works_bronze'
+input_format = 'parquet'
+
+# Dicionario com todas as tabelas ( display(tables_ingestion_dic) )
+tables_ingestion_dic = generate_ingestion_dict(folders_path)
+
+# COMMAND ----------
+
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def process_table(table_info: dict) -> str:
