@@ -9,7 +9,7 @@ spark.sql("SET spark.databricks.delta.schema.autoMerge.enabled = true")
 
 # COMMAND ----------
 
-# MAGIC %run "/Workspace/AdventureWorks_Lakehouse/AdventureWorks/src/utils/common_functions"
+# MAGIC %run "/Workspace/Users/roseaneinacio@nw5y.onmicrosoft.com/ws_pj_adventure_works_lakehouse/src/utils/common_functions"
 
 # COMMAND ----------
 
@@ -27,13 +27,14 @@ from pyspark.sql.types import (
 # COMMAND ----------
 
 # Informações da Tabela Fonte
-source_table = "sales_customer"
-source_database = "adventure_works_bronze"
+table_name = "sales_customer"
+source_table = table_name
+source_database = bronze_db
 bronze_source_table = spark.read.table(f"{source_database}.{source_table}")
 
 # Informações da Tabela Destino (target)
-target_table_name = "sales_customer"
-target_database = "adventure_works_prata"
+target_table_name = table_name
+target_database = silver_db
 target_table = f"{target_database}.{target_table_name}"
 
 primary_keys = ["CustomerID"]
