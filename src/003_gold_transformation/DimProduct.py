@@ -17,10 +17,10 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["ProductKey"]
 
 # Informações das Tabelas Fonte
-product_df = spark.read.table("adventure_works_prata.production_product")
-subcategory_df = spark.read.table("adventure_works_prata.production_productsubcategory")
-category_df = spark.read.table("adventure_works_prata.production_productcategory")
-model_df = spark.read.table("adventure_works_prata.production_productmodel")
+product_df = spark.read.table(f"{silver_db}.production_product")
+subcategory_df = spark.read.table(f"{silver_db}.production_productsubcategory")
+category_df = spark.read.table(f"{silver_db}.production_productcategory")
+model_df = spark.read.table(f"{silver_db}.production_productmodel")
 
 # COMMAND ----------
 

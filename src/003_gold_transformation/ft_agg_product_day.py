@@ -17,11 +17,11 @@ target_database = "adventure_works_ouro"
 target_table = f"{target_database}.{target_table_name}"
 
 # Informações das Tabelas Fonte
-sales_order_header_df = spark.read.table("adventure_works_prata.sales_salesorderheader")
-sales_order_detail_df = spark.read.table("adventure_works_prata.sales_salesorderdetail")
-product_df = spark.read.table("adventure_works_prata.production_product")
-product_subcategory_df = spark.read.table("adventure_works_prata.production_productsubcategory")
-product_category_df = spark.read.table("adventure_works_prata.production_productcategory")
+sales_order_header_df = spark.read.table(f"{silver_db}.sales_salesorderheader")
+sales_order_detail_df = spark.read.table(f"{silver_db}.sales_salesorderdetail")
+product_df = spark.read.table(f"{silver_db}.production_product")
+product_subcategory_df = spark.read.table(f"{silver_db}.production_productsubcategory")
+product_category_df = spark.read.table(f"{silver_db}.production_productcategory")
 
 # COMMAND ----------
 

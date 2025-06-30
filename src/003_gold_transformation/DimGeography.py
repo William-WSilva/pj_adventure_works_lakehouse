@@ -17,9 +17,9 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["GeographyKey"]
 
 # Informações das Tabelas Fonte
-address_df = spark.read.table("adventure_works_prata.person_address")
-state_province_df = spark.read.table("adventure_works_prata.person_stateprovince")
-country_region_df = spark.read.table("adventure_works_prata.person_countryregion")
+address_df = spark.read.table(f"{silver_db}.person_address")
+state_province_df = spark.read.table(f"{silver_db}.person_stateprovince")
+country_region_df = spark.read.table(f"{silver_db}.person_countryregion")
 
 # COMMAND ----------
 

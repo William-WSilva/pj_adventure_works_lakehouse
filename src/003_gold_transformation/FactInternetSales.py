@@ -20,13 +20,13 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["SalesOrderID", "SalesOrderDetailID"]
 
 # Informações da Tabela Fonte
-sales_order_header_df = spark.read.table("adventure_works_prata.sales_salesorderheader")
-sales_order_detail_df = spark.read.table("adventure_works_prata.sales_salesorderdetail")
-product_df = spark.read.table("adventure_works_prata.production_product")
-customer_df = spark.read.table("adventure_works_prata.sales_customer")
-special_offer_df = spark.read.table("adventure_works_prata.sales_specialoffer")
-sales_territory_df = spark.read.table("adventure_works_prata.sales_salesterritory")
-product_cost_history_df = spark.read.table("adventure_works_prata.production_productcosthistory")
+sales_order_header_df = spark.read.table(f"{silver_db}.sales_salesorderheader")
+sales_order_detail_df = spark.read.table(f"{silver_db}.sales_salesorderdetail")
+product_df = spark.read.table(f"{silver_db}.production_product")
+customer_df = spark.read.table(f"{silver_db}.sales_customer")
+special_offer_df = spark.read.table(f"{silver_db}.sales_specialoffer")
+sales_territory_df = spark.read.table(f"{silver_db}.sales_salesterritory")
+product_cost_history_df = spark.read.table(f"{silver_db}.production_productcosthistory")
 
 # COMMAND ----------
 

@@ -22,10 +22,10 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["SalesOrderNumber", "SalesOrderLineNumber", "SalesReasonKey"]
 
 # Informações da Tabela Fonte
-sales_order_header_df = spark.read.table("adventure_works_prata.sales_salesorderheader")
-sales_order_detail_df = spark.read.table("adventure_works_prata.sales_salesorderdetail")
-sales_reason_df = spark.read.table("adventure_works_prata.sales_salesreason")
-sales_order_reason_df = spark.read.table("adventure_works_prata.sales_salesorderheadersalesreason")
+sales_order_header_df = spark.read.table(f"{silver_db}.sales_salesorderheader")
+sales_order_detail_df = spark.read.table(f"{silver_db}.sales_salesorderdetail")
+sales_reason_df = spark.read.table(f"{silver_db}.sales_salesreason")
+sales_order_reason_df = spark.read.table(f"{silver_db}.sales_salesorderheadersalesreason")
 
 # COMMAND ----------
 

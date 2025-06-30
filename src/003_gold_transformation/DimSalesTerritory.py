@@ -17,7 +17,7 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["SalesTerritoryKey"]
 
 # Informações da Tabela Fonte
-sales_territory_df = spark.read.table("adventure_works_prata.sales_salesterritory")
+sales_territory_df = spark.read.table(f"{silver_db}.sales_salesterritory")
 
 # COMMAND ----------
 

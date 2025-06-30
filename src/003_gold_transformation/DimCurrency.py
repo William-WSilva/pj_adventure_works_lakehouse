@@ -17,7 +17,7 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["CurrencyKey"]
 
 # Informações da Tabela Fonte
-currency_df = spark.read.table("adventure_works_prata.sales_currency")
+currency_df = spark.read.table(f"{silver_db}.sales_currency")
 
 # COMMAND ----------
 

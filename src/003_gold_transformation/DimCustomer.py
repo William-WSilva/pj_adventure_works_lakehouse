@@ -17,11 +17,11 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["CustomerKey"]
 
 # Informações das Tabelas Fonte
-customer_df = spark.read.table("adventure_works_prata.sales_customer")
-person_df = spark.read.table("adventure_works_prata.person_person")
-address_df = spark.read.table("adventure_works_prata.person_address")
-email_address_df = spark.read.table("adventure_works_prata.person_emailaddress")
-phone_df = spark.read.table("adventure_works_prata.person_personphone")
+customer_df = spark.read.table(f"{silver_db}.sales_customer")
+person_df = spark.read.table(f"{silver_db}.person_person")
+address_df = spark.read.table(f"{silver_db}.person_address")
+email_address_df = spark.read.table(f"{silver_db}.person_emailaddress")
+phone_df = spark.read.table(f"{silver_db}.person_personphone")
 
 # COMMAND ----------
 

@@ -17,7 +17,7 @@ target_table = f"{target_database}.{target_table_name}"
 primary_keys = ["PromotionKey"]
 
 # Informações da Tabela Fonte
-special_offer_df = spark.read.table("adventure_works_prata.sales_specialoffer")
+special_offer_df = spark.read.table(f"{silver_db}.sales_specialoffer")
 
 # COMMAND ----------
 
