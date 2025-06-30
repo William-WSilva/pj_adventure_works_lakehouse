@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %run "/Workspace/AdventureWorks_Lakehouse/AdventureWorks/src/utils/common_functions"
+# MAGIC %run "/Workspace/Users/roseaneinacio@nw5y.onmicrosoft.com/ws_pj_adventure_works_lakehouse/src/utils/common_functions"
 # MAGIC
 
 # COMMAND ----------
