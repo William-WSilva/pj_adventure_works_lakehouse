@@ -11,7 +11,7 @@ from pyspark.sql.types import IntegerType, StringType, TimestampType, StructType
 
 # Informações da Tabela Destino (target)
 target_table_name = "DimDate"
-target_database = "adventure_works_ouro"
+target_database = gold_db
 target_table = f"{target_database}.{target_table_name}"
 
 primary_keys = ["DateKey"]

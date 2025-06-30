@@ -13,7 +13,7 @@ from pyspark.sql.types import (
 
 # Informações da Tabela Destino (target)
 target_table_name = "ft_agg_product_day"
-target_database = "adventure_works_ouro"
+target_database = gold_db
 target_table = f"{target_database}.{target_table_name}"
 
 # Informações das Tabelas Fonte
