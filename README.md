@@ -1,4 +1,4 @@
-<img src="assets/img/lake_house_azure.png" width="600"/>
+<img src="./assets/img/lake_house_azure.png" width="600"/>
 
 ## 📌 Visão Geral do Projeto
 
