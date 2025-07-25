@@ -2,7 +2,7 @@
 
 ## 📌 Visão Geral do Projeto
 
-Este projeto tem como objetivo construir uma pipeline de dados robusta, escalável e automatizada para uma empresa do setor de varejo, utilizando serviços gerenciados do Azure e adotando a arquitetura Lakehouse (Bronze → Silver → Gold). A solução entrega dados prontos para análise em dashboards do Power BI, apoiando decisões estratégicas e operacionais do negócio.
+Este projeto tem como objetivo construir uma pipeline de dados escalável e automatizada para uma empresa do setor de varejo, utilizando serviços gerenciados do Azure e adotando a arquitetura moderna Lakehouse (Bronze → Silver → Gold). A solução entrega dados prontos para análise em dashboards do Power BI, apoiando decisões estratégicas e operacionais do negócio.
 
 <img src="assets/img/Arquitetura.png" width="900"/>
 
